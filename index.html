@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cynthya & Madilson | Casamento</title>
+    <!-- Tailwind CSS CDN is kept for simplicity to maintain existing styles without extra config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Font Classes */
+      .font-script { font-family: 'Great Vibes', cursive; }
+      .font-serif-display { font-family: 'Cinzel', serif; }
+      .font-body { font-family: 'Lato', sans-serif; }
+      
+      /* Smooth scroll */
+      html { scroll-behavior: smooth; }
+      
+      /* Animation for floral elements */
+      @keyframes float-natural {
+        0% { transform: translate(0px, 0px) rotate(0deg); }
+        25% { transform: translate(3px, -5px) rotate(2deg); }
+        50% { transform: translate(0px, -10px) rotate(0deg); }
+        75% { transform: translate(-3px, -5px) rotate(-2deg); }
+        100% { transform: translate(0px, 0px) rotate(0deg); }
+      }
+      .animate-float-natural {
+        animation: float-natural 8s ease-in-out infinite;
+      }
+
+      /* Floating Hearts Animation (Small) */
+      @keyframes float-up-fade {
+        0% {
+          transform: translateY(0) scale(0.5);
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-60px) scale(1.2) translateX(var(--tx));
+          opacity: 0;
+        }
+      }
+      
+      .animate-float-heart {
+        animation: float-up-fade 1s ease-out forwards;
+      }
+
+      /* Big Heart Burst Animation */
+      @keyframes heart-burst {
+        0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+        50% { transform: scale(1.5) rotate(0deg); opacity: 1; }
+        100% { transform: scale(2) rotate(0deg); opacity: 0; }
+      }
+      
+      .animate-heart-burst {
+        animation: heart-burst 0.8s ease-out forwards;
+      }
+
+      /* Basic Fade In */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
+    "vite": "https://esm.sh/vite@^7.2.7",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-slate-800 font-body antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
